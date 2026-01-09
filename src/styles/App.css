@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --zen-green: #4a7c59;
+  --zen-green-light: #5a8f6a;
+  --zen-green-dark: #3d6b4a;
+  --cream: #f8f6f2;
+  --warm-gray: #8a8680;
+  --soft-border: #e8e4de;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: var(--cream);
+  min-height: 100vh;
+  color: #2c2c2c;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 300;
+  margin: 0;
+  color: var(--zen-green-dark);
+  letter-spacing: 0.15em;
+  text-transform: lowercase;
+}
+
+.subtitle {
+  color: var(--warm-gray);
+  margin-top: 8px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.upload-section {
+  margin: 48px 0;
+}
+
+#file-input {
+  display: none;
+}
+
+.upload-button {
+  display: inline-block;
+  padding: 18px 36px;
+  background: transparent;
+  border: 1px solid var(--soft-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--warm-gray);
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.upload-button:hover {
+  border-color: var(--zen-green);
+  color: var(--zen-green);
+}
+
+.waveforms {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.waveform-container {
+  position: relative;
+  background: rgba(74, 124, 89, 0.05);
+  border-radius: 4px;
+  padding: 16px;
+  border: 1px solid var(--soft-border);
+}
+
+.waveform-label {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 0.7rem;
+  color: var(--warm-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.waveform-canvas {
+  width: 100%;
+  height: 70px;
+  display: block;
+}
+
+.preview-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.preview-btn {
+  padding: 10px 24px;
+  background: transparent;
+  border: 1px solid var(--soft-border);
+  border-radius: 4px;
+  color: var(--warm-gray);
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.03em;
+}
+
+.preview-btn:hover {
+  border-color: var(--zen-green);
+  color: var(--zen-green);
+}
+
+.controls {
+  background: transparent;
+  border-radius: 4px;
+  padding: 0;
+}
+
+.knobs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.knob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.knob label {
+  font-size: 0.75rem;
+  color: var(--warm-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+.knob input[type='range'] {
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--soft-border);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.knob input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--zen-green);
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(74, 124, 89, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.knob input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+.knob span {
+  font-size: 0.85rem;
+  color: var(--zen-green-dark);
+  font-weight: 400;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.process-btn,
+.export-btn {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+}
+
+.process-btn {
+  background: var(--zen-green);
+  color: var(--cream);
+}
+
+.process-btn:hover:not(:disabled) {
+  background: var(--zen-green-dark);
+}
+
+.export-btn {
+  background: transparent;
+  color: var(--zen-green);
+  border: 1px solid var(--zen-green);
+}
+
+.export-btn:hover:not(:disabled) {
+  background: var(--zen-green);
+  color: var(--cream);
+}
+
+.process-btn:disabled,
+.export-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
